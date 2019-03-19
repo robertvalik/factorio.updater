@@ -1,5 +1,7 @@
 #!/bin/bash
-FACTORIO_ROOT="/home/factorio"
+. ./factorio_updater.conf
+echo $FACTORIO_ROOT
+
 FACTORIO_UPDATER_FILENAME_CURL=$(curl -sIL  https://www.factorio.com/get-download/latest/headless/linux64 | grep -o -E 'filename=.*$' | sed -e 's/filename=//')
 FACTORIO_UPDATER_FILENAME="$(sed -e 's/[[:space:]]*$//' <<<${FACTORIO_UPDATER_FILENAME_CURL})"
 FACTORIO_UPDATER_FOLDER=$(basename $FACTORIO_UPDATER_FILENAME .tar.xz)
