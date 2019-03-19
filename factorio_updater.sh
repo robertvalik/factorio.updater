@@ -1,5 +1,5 @@
 #!/bin/bash
-. ./factorio_updater.conf
+. ~/.factorio_server.conf
 echo $FACTORIO_ROOT
 
 FACTORIO_UPDATER_FILENAME_CURL=$(curl -sIL  https://www.factorio.com/get-download/latest/headless/linux64 | grep -o -E 'filename=.*$' | sed -e 's/filename=//')
